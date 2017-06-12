@@ -135,7 +135,7 @@
                                 position: 'top',
                                 formatter: '{c}万笔',
                                 textStyle: {
-                                    fontSize: 18,
+                                    fontSize: 14,
                                     color: '#87bbff'
                                 }
                             }
@@ -260,7 +260,7 @@
                                 position: 'top',
                                 formatter: '{c}万元',
                                 textStyle: {
-                                    fontSize: 18,
+                                    fontSize: 14,
                                     color: '#87bbff'
                                 }
                             }
@@ -1158,10 +1158,17 @@
                     // this.modeShow();
                     break;
                 case 8:
-                    //产品
-                    //this.chartProduct();
+                    this.scrollNum({elem: '.cumulative-broker-count'});
+                    this.scrollNum({elem: '.cumulative-invitation-count'});
+                    this.scrollNum({elem: '.cumulative-invitation-awards'});
+                    this.scrollNum({elem: '.cumulative-investment-amount'});
+                    this.scrollNum({elem: '.cumulative-commission-charges'});
                     break;
                 case 9:
+                    this.scrollNum({elem: '.cumulative-turnover-total-amount'});
+                    this.scrollNum({elem: '.cumulative-turnover-total-profit'});
+                    this.scrollNum({elem: '.cumulative-total-register-users'});
+                    this.scrollNum({elem: '.cumulative-total-investment-users'});
                     break;
                 case 10:
                     //this.nextColorGray();

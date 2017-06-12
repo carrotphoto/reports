@@ -188,6 +188,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1
 }
 
+.line-height-125rem {
+    line-height: 1.25rem;
+}
+
 .product-table-row {
 
 }
@@ -731,9 +735,9 @@ table td {
 .text-achieve-text {
     font-size: 1rem;
     padding-top: 2rem;
-    width: 80%;
+    width: 84%;
     position: relative;
-    left: 10%;
+    left: 8%;
     padding-left: 0.5rem;
 }
 
@@ -746,7 +750,6 @@ table td {
 }
 
 .text-emphasis-number {
-    font-family: GLUEKLIN;
     color: #fd6a53;
     font-size: 1.25rem;
 }
@@ -1139,6 +1142,127 @@ table td {
 .float-left {
     float: left;
 }
+/*
+
+!* ########################## *!
+.text-achieve-text .num {
+    font-size: 1.25rem;
+    width: 0.8rem;
+    height: 1.25rem;
+    text-align: center;
+    line-height: 1.25rem;
+    display: block;
+    overflow: hidden;
+    font-family: DINOT;
+    text-align: center
+}
+
+.text-achieve-text .num-dot {
+    font-size: 1.25rem;
+    width: 0.8rem;
+    height: 1.25rem;
+    text-align: center;
+    line-height: 1.25rem;
+    display: block;
+    overflow: hidden;
+    font-family: DINOT;
+    text-align: center
+}
+
+.text-achieve-text .num-dot i {
+    font-family: DINOT;
+    display: block;
+    width: .4rem;
+    height: 1.25rem;
+    font-style: normal;
+    transform: translateY(1.25rem);
+    -webkit-transform: translateY(1.25rem);
+}
+
+.text-achieve-text .num i {
+    display: block;
+    font-style: normal;
+    width: 0.8rem;
+    word-break: break-all;
+    white-space: pre-wrap;
+    height: 12.5rem;
+    font-family: DINOT;
+    transform: translateY(1.25rem);
+    -webkit-transform: translateY(1.25rem);
+}
+
+.text-achieve-text .num.num-0 i {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-1 i {
+    transform: translateY(-1.25rem);
+    -webkit-transform: translateY(-1.25rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-2 i {
+    transform: translateY(-2.5rem);
+    -webkit-transform: translateY(-2.5rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-3 i {
+    transform: translateY(-3.75rem);
+    -webkit-transform: translateY(-3.75rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-4 i {
+    transform: translateY(-5rem);
+    -webkit-transform: translateY(-5rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-5 i {
+    transform: translateY(-6.25rem);
+    -webkit-transform: translateY(-6.25rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-6 i {
+    transform: translateY(-7.5rem);
+    -webkit-transform: translateY(-7.5rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-7 i {
+    transform: translateY(-8.75rem);
+    -webkit-transform: translateY(-8.75rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-8 i {
+    transform: translateY(-10rem);
+    -webkit-transform: translateY(-10rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.text-achieve-text .num.num-9 i {
+    transform: translateY(-11.25rem);
+    -webkit-transform: translateY(-11.25rem);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+!* #################################### *!
+*/
 
 .num,
 .num-dot {
@@ -1215,7 +1339,7 @@ table td {
 }
 
 .num.num-4 i {
-    transform: translateY(-4rem);
+    transform: translateY(-8rem);
     -webkit-transform: translateY(-8rem);
     transition: all 1s;
     -webkit-transition: all 1s;
