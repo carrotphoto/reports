@@ -16,7 +16,7 @@
         totalInvestCountChart: function () {
             $('#chart-tot-invest-count').css({
                 'width': $('body').width() + 'px',
-                'height': ($('body').width() - 200) + 'px'
+                'height': ($('body').width() - 230) + 'px'
             });
             var totalInvestChart = echarts.init(document.getElementById('chart-tot-invest-count'));
             //
@@ -152,7 +152,7 @@
         totalUserInvestProfitChart: function () {
             $('#chart-tot-invest-profit').css({
                 'width': $('body').width() + 'px',
-                'height': ($('body').width() - 200) + 'px'
+                'height': ($('body').width() - 230) + 'px'
             });
             var totalInvestChart = echarts.init(document.getElementById('chart-tot-invest-profit'));
             //
@@ -191,7 +191,7 @@
                 xAxis: [
                     {
                         type: 'category',
-                        data: ['2017年4月', '2017年5月'],
+                        data: ['2016年5月', '2017年5月'],
                         boundaryGap: ['20%', '20%'],
                         axisLabel: {
                             textStyle: {
@@ -275,12 +275,14 @@
             totalInvestChart.setOption(option);
         },
         chartFemaleAge: function () {
-            $('#chart-female-age').css({'width': $('body').width() + 'px', 'height': ($('body').width() - 60) + 'px'});
+            $('#chart-female-age').css({
+                'width': $('body').width() + 'px',
+                'height': '320px'
+            });
             var chartAge = echarts.init(document.getElementById('chart-female-age'));
             //
             var option = {
                 title: {
-                    top: 0,
                     text: '5月女性用户年龄分布',
                     textStyle: {
                         color: '#333',
@@ -295,7 +297,8 @@
                     },
                     z: 100,
                     x: 'center',
-                    top: '10'
+                    top: '0',
+                    padding: [5, 0, 70, 0]
                 },
                 tooltip: {
                     show: false,
@@ -308,7 +311,7 @@
                         name: '投资用户年龄占比',
                         type: 'pie',
                         radius: ['30%', '50%'],
-                        center: ['50%', '45%'],
+                        center: ['50%', '50%'],
                         data: [
                             {value: 2.5, name: '50'},
                             {value: 10.19, name: '60'},
@@ -323,7 +326,12 @@
                                 textStyle: {
                                     color: '#323232'
                                 },
-                                formatter: '{b}后 {c}%'
+                                formatter: function (params) {
+                                    if (params.name != '其他')
+                                        return params.name + '后 ' + params.value.toFixed(2) + '%';
+                                    else
+                                        return params.name + ' ' + params.value.toFixed(2) + '%';
+                                }
                             },
                             emphasis: {
                                 show: true,
@@ -336,7 +344,7 @@
                         labelLine: {
                             normal: {
                                 position: 'inside',
-                                length: 10,
+                                length: 20,
                                 lineStyle: {
                                     color: '#323232'
                                 }
@@ -365,13 +373,11 @@
             chartAge.setOption(option);
         },
         chartArea: function () {
-            $('#chart-area').css({'width': $('body').width() + 'px', 'height': ($('body').width() - 100) + 'px'});
+            $('#chart-area').css({
+                'width': $('body').width() + 'px',
+                'height': ($('body').width() - 100) + 'px'
+            });
             var chartArea = echarts.init(document.getElementById('chart-area'));
-
-            function randomData() {
-                return Math.round(Math.random() * 1000);
-            }
-
             var option = {
                 title: {
                     text: '5月全国投资者分布占比',
@@ -404,7 +410,7 @@
                     }
                 },
                 visualMap: [{
-                    show: true,
+                    show: false,
                     min: 0,
                     max: 20,
                     left: 'center',
@@ -421,8 +427,8 @@
                     type: 'piecewise',
                     pieces: [
                         {min: 20, label: '20.00%以上'},
-                        {min: 5, max: 20, label: '5.00% - 20.00%'},
-                        {min: 1, max: 5, label: '1.00% - 5.00%'},
+                        {min: 5, max: 20, label: '5.00%-20.00%'},
+                        {min: 1, max: 5, label: '1.00%-5.00%'},
                         {max: 1, label: '1.00%以下'}
                     ]
                 }],
@@ -521,7 +527,7 @@
         chartPreference: function () {
             $('#chart-preference').css({
                 'width': $('body').width() + 'px',
-                'height': ($('body').width() - 60) + 'px'
+                'height': ($('body').width() - 120) + 'px'
             });
             var chartPreference = echarts.init(document.getElementById('chart-preference'));
             //
@@ -541,7 +547,7 @@
                     },
                     z: 100,
                     x: 'center',
-                    top: '10'
+                    top: '0'
                 },
                 tooltip: {
                     show: false,
@@ -549,6 +555,7 @@
                     formatter: ' {a} <br> {b} '
                 },
                 legend: {
+                    show: false,
                     orient: 'horizontal',
                     x: 'center',
                     y: 'bottom',
@@ -599,7 +606,7 @@
                         name: '产品投资占比分布',
                         type: 'pie',
                         radius: ['30%', '50%'],
-                        center: ['50%', '45%'],
+                        center: ['50%', '60%'],
                         data: [
                             {value: 46.01, name: '网宝强'},
                             {value: 28.15, name: '网易宝'},
@@ -608,14 +615,15 @@
                             {value: 1.29, name: '其他'},
                             {value: 0.12, name: '车贷'}
                         ],
+                        startAngle: 89,
                         label: {
                             normal: {
-                                show: false,
+                                show: true,
                                 position: 'outside',
                                 textStyle: {
-                                    color: '#4682fa'
+                                    color: '#323232'
                                 },
-                                formatter: '{a} {c}%'
+                                formatter: '{c}%'
                             },
                             emphasis: {
                                 show: false,
@@ -627,11 +635,11 @@
                         },
                         labelLine: {
                             normal: {
-                                show: false,
+                                show: true,
                                 position: 'inside',
-                                length: 10,
+                                length: 20,
                                 lineStyle: {
-                                    color: '#4682fa'
+                                    color: '#323232'
                                 }
                             },
                             emphasis: {
@@ -660,7 +668,7 @@
         chartFemalePeriod: function () {
             $('#chart-female-period').css({
                 'width': ($('body').width()) + 'px',
-                'height': ($('body').width() - 140) + 'px'
+                'height': '240px'
             });
             var chartPeriod = echarts.init(document.getElementById('chart-female-period'));
             var option = {
@@ -697,7 +705,7 @@
                         show: false
                     }
                 },
-                animationDurationUpdate: 1200,
+                animationDurationUpdate: 2200,
                 series: [{
                     type: 'bar',
                     itemStyle: {
@@ -727,12 +735,12 @@
                             offset: [-75, -15],
                             textStyle: {
                                 color: '#323232',
-                                fontSize: 14
+                                fontSize: 12
                             },
-                            formatter: function (params, seriesType, seriesIndex, name) {
+                            formatter: function (params) {
                                 switch (params.dataIndex) {
                                     case 0:
-                                        return '6-12个月  2.74%';
+                                        return '6-12个月 2.74%';
                                     case 1:
                                         return '3-6个月  3.25%';
                                     case 2:
@@ -744,7 +752,7 @@
                             }
                         }
                     }
-                },]
+                }]
             };
 
             chartPeriod.setOption(option);
@@ -753,11 +761,11 @@
         chartFemaleProperty: function () {
             $('#chart-female-property').css({
                 'width': $('body').width() + 'px',
-                'height': ($('body').width() - 100) + 'px'
+                'height': ($('body').width() - 150) + 'px'
             });
             var chartFemaleProperty = echarts.init(document.getElementById('chart-female-property'));
             //
-            option = {
+            var option = {
                 title: {
                     text: '5月女性投资额度分布',
                     textStyle: {
@@ -773,7 +781,8 @@
                     },
                     z: 100,
                     x: 'center',
-                    top: '10'
+                    top: '0',
+                    padding: [0, 0, 20, 0]
                 },
                 tooltip: {
                     show: false,
@@ -781,13 +790,14 @@
                     formatter: ' {a} <br> {b} '
                 },
                 legend: {
+                    show: false,
                     orient: 'horizontal',
                     x: 'center',
                     y: 'bottom',
                     itemHeight: 10,
                     itemWidth: 10,
-                    left: '15%',
-                    right: '15%',
+                    left: '10%',
+                    right: '10%',
                     itemGap: 4,
                     data: [
                         {icon: 'rect', name: '1万以下'},
@@ -798,16 +808,16 @@
                     formatter: function (name) {
                         switch (name) {
                             case '1万以下':
-                                return name + '      2800笔数 ';
+                                return name + '    2800笔数 ';
                                 break;
                             case '1万-5万':
-                                return name + '      1458笔数 ';
+                                return name + '    1458笔数 ';
                                 break;
                             case '5万-10万':
-                                return name + '      251笔数 ';
+                                return name + '    251笔数 ';
                                 break;
                             case '10万及以上':
-                                return name + '      47笔数 ';
+                                return name + '    47笔数 ';
                                 break;
                         }
                     },
@@ -823,7 +833,8 @@
                         name: '女性投资额度分布',
                         type: 'pie',
                         radius: ['30%', '50%'],
-                        center: ['50%', '45%'],
+                        center: ['50%', '50%'],
+                        startAngle: 88,
                         data: [
                             {value: 2800, name: '1万以下'},
                             {value: 1458, name: '1万-5万'},
@@ -837,7 +848,9 @@
                                 textStyle: {
                                     color: '#323232'
                                 },
-                                formatter: '{d}%'
+                                formatter: function (params) {
+                                    return params.percent.toFixed(2) + '%';
+                                }
                             },
                             emphasis: {
                                 show: true,
@@ -851,7 +864,7 @@
                             normal: {
                                 show: true,
                                 position: 'outside',
-                                length: 10,
+                                length: 20,
                                 lineStyle: {
                                     color: '#323232'
                                 }
@@ -882,7 +895,7 @@
         chartFemaleArea: function () {
             $('#chart-female-area').css({
                 'width': $('body').width() + 'px',
-                'height': ($('body').width() - 100) + 'px'
+                'height': ($('body').width() - 80) + 'px'
             });
             var chartArea = echarts.init(document.getElementById('chart-female-area'));
 
@@ -896,7 +909,8 @@
                     },
                     top: '10',
                     x: 'center',
-                    z: 1
+                    z: 1,
+                    padding: [5, 0, 30, 0]
                 },
                 tooltip: {
                     trigger: 'item',
@@ -918,7 +932,7 @@
                     }
                 },
                 visualMap: [{
-                    show: true,
+                    show: false,
                     min: 0,
                     max: 20000,
                     left: 'center',
@@ -988,7 +1002,7 @@
                         max: 5
                     },
                     z: 3,
-                    top: 80,
+                    top: 100,
                     data: [
                         {name: '北京', value: 1742784.52},
                         {name: '天津', value: 1631422.28},
@@ -1117,12 +1131,12 @@
         initChart: function (i) {
             switch (i) {
                 case 0:
-                    //
-                    this.nextColorWhite();
                     this.coverShow();
+                    this.nextColorGray();
                     break;
                 case 1:
                     //地区
+                    this.nextColorGray();
                     this.chartArea();
                     break;
                 case 2:
@@ -1146,7 +1160,7 @@
                  break;*/
 
                 case 6:
-                    this.nextColorGray();
+
                     //总览
                     //this.totalInvestChart();
                     this.scrollNum({elem: '.cumulative-turnover'});

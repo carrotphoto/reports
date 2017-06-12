@@ -969,6 +969,12 @@ table td {
     position: relative
 }
 
+.content-80-per-width {
+    position: relative;
+    width: 80%;
+    left: 10%;
+}
+
 .cover .logo {
     text-align: center;
     bottom: 15%;
@@ -1142,6 +1148,7 @@ table td {
 .float-left {
     float: left;
 }
+
 /*
 
 !* ########################## *!
