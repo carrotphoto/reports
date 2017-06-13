@@ -630,9 +630,9 @@
                                 formatter: '{c}%'
                             },
                             emphasis: {
-                                show: false,
+                                show: true,
                                 textStyle: {
-                                    fontSize: '12',
+                                    fontSize: '14',
                                     fontWeight: 'bold'
                                 }
                             }
