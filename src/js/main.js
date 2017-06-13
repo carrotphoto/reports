@@ -881,7 +881,7 @@
                             normal: {
                                 borderWidth: 0,
                                 color: function (params) {
-                                    var colorList = ['#ff7a48', '#ff8456', '#ffb092', '#ffcfbd', '#ff7a48'];
+                                    var colorList = ['#ff7a48', '#ff9770', '#ffb092', '#ff7a48'];
                                     return colorList[params.dataIndex];
                                 }
                             },
