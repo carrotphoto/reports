@@ -398,14 +398,18 @@
                     },
                     position: 'top',
                     formatter: function (params, ticket, callback) {
+                        var v = null;
+                        if (params != undefined || params != null)
+                            v = params.value.toFixed(2);
+
                         if (params.dataIndex == 14) {
-                            return '<span style="color:#ff4040">NO. 1</span> <br>' + params.name + ' ' + params.value + '%';
+                            return '<span style="color:#ff4040">NO. 1</span> <br>' + params.name + ' ' + v + '%';
                         } else if (params.dataIndex == 13) {
-                            return '<span style="color:#ff4040">NO. 2</span> <br>' + params.name + ' ' + params.value + '%';
+                            return '<span style="color:#ff4040">NO. 2</span> <br>' + params.name + ' ' + v + '%';
                         } else if (params.dataIndex == 11) {
-                            return '<span style="color:#ff4040">NO. 3</span> <br>' + params.name + ' ' + params.value + '%';
+                            return '<span style="color:#ff4040">NO. 3</span> <br>' + params.name + ' ' + v + '%';
                         } else {
-                            return params.name + ' ' + params.value + '%';
+                            return params.name + ' ' + v + '%';
                         }
                     }
                 },
@@ -920,14 +924,16 @@
                     },
                     position: 'top',
                     formatter: function (params, ticket, callback) {
+                        var v = params.value.toFixed(2);
+
                         if (params.dataIndex == 14) {
-                            return '<span style="color:#ff4040">NO. 1</span> <br>' + params.name + ' ' + params.value;
+                            return '<span style="color:#ff4040">NO. 1</span> <br>' + params.name + ' ' + v;
                         } else if (params.dataIndex == 13) {
-                            return '<span style="color:#ff4040">NO. 2</span> <br>' + params.name + ' ' + params.value;
+                            return '<span style="color:#ff4040">NO. 2</span> <br>' + params.name + ' ' + v;
                         } else if (params.dataIndex == 11) {
-                            return '<span style="color:#ff4040">NO. 3</span> <br>' + params.name + ' ' + params.value;
+                            return '<span style="color:#ff4040">NO. 3</span> <br>' + params.name + ' ' + v;
                         } else {
-                            return params.name + ' ' + params.value;
+                            return params.name + ' ' + v;
                         }
                     }
                 },
